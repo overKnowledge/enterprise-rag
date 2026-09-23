@@ -14,9 +14,11 @@ class Settings(BaseSettings):
     app_name: str = "Enterprise RAG Platform"
     environment: str = "development"
     log_level: str = "INFO"
+    groq_model: str = "openai/gpt-oss-20b"
 
     openai_api_key: SecretStr | None = None
     mistral_api_key: SecretStr | None = None
+    groq_api_key: SecretStr | None = None
 
 
 @lru_cache
