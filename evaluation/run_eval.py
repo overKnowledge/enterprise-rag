@@ -1,7 +1,8 @@
 import json
 import sys
-from pathlib import Path
 import time
+from pathlib import Path
+
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
 from app.embeddings.huggingface import HuggingFaceEmbeddingProvider  # noqa: E402
@@ -12,6 +13,7 @@ from app.vectorstore.chroma import ChromaVectorStore  # noqa: E402
 from evaluation.metrics import hit_at_k, reciprocal_rank  # noqa: E402
 
 DATASET_PATH = Path("evaluation/datasets/golden_qa.json")
+RESULTS_PATH = Path("evaluation/last_run_results.json")
 TOP_K = 5
 
 
@@ -19,16 +21,29 @@ def load_dataset() -> list[dict]:
     return json.loads(DATASET_PATH.read_text())
 
 
-def run_evaluation() -> None:
+def load_existing_results() -> dict[str, dict]:
+    if RESULTS_PATH.exists():
+        existing = json.loads(RESULTS_PATH.read_text())
+        return {r["id"]: r for r in existing}
+    return {}
+
+
+def run_evaluation(resume: bool = True) -> None:
     provider = HuggingFaceEmbeddingProvider()
     store = ChromaVectorStore(provider)
     llm = GroqLLMProvider()
     answerer = Answerer(store, llm, top_k=TOP_K)
 
     questions = load_dataset()
+    existing = load_existing_results() if resume else {}
     results = []
 
     for q in questions:
+        if q["id"] in existing:
+            print(f"[{q['id']}] already done, skipping")
+            results.append(existing[q["id"]])
+            continue
+
         hits = store.search(q["question"], top_k=TOP_K)
         retrieved_sources = [h["metadata"]["source_name"] for h in hits]
 
@@ -40,8 +55,6 @@ def run_evaluation() -> None:
         if q["answerable"]:
             expected = q["expected_source"]
             if expected == "cross-document":
-                # No single ground-truth source, so we don't score hit/rr or refusal here —
-                # just record what was retrieved for manual review.
                 row["hit"] = None
                 row["rr"] = None
                 row["retrieved_top1"] = retrieved_sources[0] if retrieved_sources else None
@@ -60,10 +73,12 @@ def run_evaluation() -> None:
         row["answer_preview"] = answer_result["answer"][:150]
         results.append(row)
         print(f"[{q['id']}] done")
-        time.sleep(2)  # stay under Groq's free-tier tokens-per-minute limit
+
+        # Save after every question, not just at the end — so a crash loses at most one question's work.
+        RESULTS_PATH.write_text(json.dumps(results, indent=2))
+        time.sleep(2)
 
     print_report(results)
-    Path("evaluation/last_run_results.json").write_text(json.dumps(results, indent=2))
 
 
 def print_report(results: list[dict]) -> None:

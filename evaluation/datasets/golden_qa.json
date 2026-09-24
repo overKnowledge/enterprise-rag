@@ -150,5 +150,69 @@
   "expected_page_range": [2, 3],
   "difficulty": "easy",
   "answerable": true
+  },
+  {
+  "id": "q20",
+  "question": "What specific number of attention heads did the base Transformer model use?",
+  "expected_source": "attention_is_all_you_need.pdf",
+  "expected_page_range": [4, 5],
+  "difficulty": "hard",
+  "answerable": true
+  },
+  {
+  "id": "q21",
+  "question": "Unlike LSTMs, what does the GRU NOT have?",
+  "expected_source": "gated_recurrent_neural_networks.pdf",
+  "expected_page_range": [4, 5],
+  "difficulty": "hard",
+  "answerable": true
+  },
+  {
+  "id": "q22",
+  "question": "How does a model decide whether retrieved information is trustworthy enough to use directly?",
+  "expected_source": "crag.pdf",
+  "expected_page_range": [4, 5],
+  "difficulty": "hard",
+  "answerable": true
+  },
+  {
+  "id": "q23",
+  "question": "What happens after training completes, in terms of how a model's weights get updated?",
+  "expected_source": "fundamentals_of_deep_learning.pdf",
+  "expected_page_range": null,
+  "difficulty": "hard",
+  "answerable": true
+  },
+  {
+  "id": "q24",
+  "question": "Between linear and polynomial regression, which one risks overfitting more, and why?",
+  "expected_source": "https://www.geeksforgeeks.org/machine-learning/regression-in-machine-learning/",
+  "expected_page_range": [1, 1],
+  "difficulty": "hard",
+  "answerable": true
+  },
+  {
+  "id": "q25",
+  "question": "Why might a recurrent model struggle with long sequences, and how does attention avoid that problem?",
+  "expected_source": "cross-document",
+  "expected_page_range": null,
+  "difficulty": "hard",
+  "answerable": true
+  },
+  {
+  "id": "q26",
+  "question": "What model won the WMT 2014 competition outright, according to this paper?",
+  "expected_source": null,
+  "expected_page_range": null,
+  "difficulty": "hard",
+  "answerable": false
+  },
+  {
+  "id": "q27",
+  "question": "What is the exact GitHub repository URL for the CRAG implementation mentioned in the paper?",
+  "expected_source": null,
+  "expected_page_range": null,
+  "difficulty": "hard",
+  "answerable": false
   }
 ]

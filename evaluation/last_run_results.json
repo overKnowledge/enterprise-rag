@@ -7,7 +7,7 @@
     "rr": 1.0,
     "incorrectly_refused": false,
     "correctly_refused": null,
-    "answer_preview": "Multi\u2011head attention is an attention mechanism that splits the query, key and value vectors into several lower\u2011dimensional \u201cheads\u201d, performs scaled do"
+    "answer_preview": "Multi\u2011head attention is an attention mechanism that projects the queries, keys and values into several lower\u2011dimensional subspaces, applies scaled dot"
   },
   {
     "id": "q02",
@@ -27,7 +27,7 @@
     "rr": 1.0,
     "incorrectly_refused": false,
     "correctly_refused": null,
-    "answer_preview": "The Transformer has no recurrence, so the self\u2011attention layers are permutation\u2011invariant and cannot by themselves tell the model which token comes fi"
+    "answer_preview": "The Transformer does not contain any recurrent connections, so it has no built\u2011in notion of token order. To give the model information about the posit"
   },
   {
     "id": "q04",
@@ -37,7 +37,7 @@
     "rr": 1.0,
     "incorrectly_refused": false,
     "correctly_refused": null,
-    "answer_preview": "The Transformer achieved a BLEU score of **28.4** on the WMT\u202f2014 English\u2011to\u2011German translation task. [Source: attention_is_all_you_need.pdf, page\u202f8]"
+    "answer_preview": "The Transformer achieved a BLEU score of **28.4** on the WMT\u202f2014 English\u2011to\u2011German translation task\u3010Source: attention_is_all_you_need.pdf, page\u202f8\u3011."
   },
   {
     "id": "q05",
@@ -47,7 +47,7 @@
     "rr": 1.0,
     "incorrectly_refused": false,
     "correctly_refused": null,
-    "answer_preview": "The retrieval evaluator can assign one of three confidence levels to a retrieved document: **[CORRECT]**, **[INCORRECT]**, or **[AMBIGUOUS]**. [Source"
+    "answer_preview": "The retrieval evaluator can assign one of three confidence levels to a retrieved document: **[CORRECT]**, **[INCORRECT]**, or **[AMBIGUOUS]**\u3010Source: "
   },
   {
     "id": "q06",
@@ -57,7 +57,7 @@
     "rr": 1.0,
     "incorrectly_refused": false,
     "correctly_refused": null,
-    "answer_preview": "When CRAG judges a retrieval as **Incorrect**, it discards the retrieved documents and instead performs a web search to obtain complementary external "
+    "answer_preview": "When a retrieval is judged **Incorrect**, CRAG discards the retrieved documents and turns to an external knowledge source: it performs a web search (u"
   },
   {
     "id": "q07",
@@ -67,7 +67,7 @@
     "rr": 1.0,
     "incorrectly_refused": false,
     "correctly_refused": null,
-    "answer_preview": "CRAG\u2019s accuracy was lower than Self\u2011RAG\u2019s.  \nOn the PopQA benchmark, Self\u2011RAG achieved 59.8\u202f% accuracy while CRAG achieved 54.9\u202f% accuracy\u3010Excerpt\u202f5 \u2013"
+    "answer_preview": "CRAG achieved a noticeably higher accuracy than Self\u2011RAG. In the reported comparison, CRAG obtained\u202f49.0\u202f% (and\u202f61.8\u202f% when web augmentation was added"
   },
   {
     "id": "q08",
@@ -77,7 +77,7 @@
     "rr": 1.0,
     "incorrectly_refused": false,
     "correctly_refused": null,
-    "answer_preview": "A key structural difference is that the LSTM has an **output gate** that controls how much of its memory cell is exposed to the rest of the network, w"
+    "answer_preview": "A key structural difference is that the LSTM unit contains an **output gate** that controls how much of the memory cell\u2019s content is exposed to the re"
   },
   {
     "id": "q09",
@@ -87,7 +87,7 @@
     "rr": 1.0,
     "incorrectly_refused": false,
     "correctly_refused": null,
-    "answer_preview": "No. The GRU does not maintain a separate memory\u2011cell tensor; it updates its hidden state directly using the reset and update gates\u3010Excerpt\u202f2, page\u202f4\u3011."
+    "answer_preview": "No. The GRU does not contain a separate memory cell; it operates without a distinct memory cell, unlike the LSTM which maintains a memory cell\u202f[Source"
   },
   {
     "id": "q10",
@@ -97,7 +97,7 @@
     "rr": 1.0,
     "incorrectly_refused": false,
     "correctly_refused": null,
-    "answer_preview": "The CPU\u2011time comparison was performed on the same datasets used for the learning\u2011curve plots:  \n\n- Polyphonic music datasets \u2013 the **Nottingham** and "
+    "answer_preview": "The CPU\u2011time comparisons were made on the Nottingham and MuseData polyphonic\u2011music datasets, as well as on the two Ubisoft speech\u2011signal datasets (Ubi"
   },
   {
     "id": "q11",
@@ -107,7 +107,7 @@
     "rr": 1.0,
     "incorrectly_refused": false,
     "correctly_refused": null,
-    "answer_preview": "Regression is a supervised learning technique used to predict continuous numerical values by learning relationships between input variables (features)"
+    "answer_preview": "Regression is a supervised learning technique that predicts continuous numerical values by learning the relationship between input features and a targ"
   },
   {
     "id": "q12",
@@ -117,7 +117,7 @@
     "rr": 0.5,
     "incorrectly_refused": false,
     "correctly_refused": null,
-    "answer_preview": "Higher\u2011degree polynomial regression can lead to overfitting and produce unstable predictions. [Source: https://www.geeksforgeeks.org/machine-learning/"
+    "answer_preview": "Higher\u2011degree polynomial regression can cause overfitting, leading to unstable predictions on new data.\u202f[Source: https://www.geeksforgeeks.org/machine"
   },
   {
     "id": "q13",
@@ -127,7 +127,7 @@
     "rr": 1.0,
     "incorrectly_refused": false,
     "correctly_refused": null,
-    "answer_preview": "Backpropagation is the algorithm that computes how the error of a neural network changes with each weight, so that the weights can be updated by gradi"
+    "answer_preview": "Backpropagation is the algorithm used to train multilayer neural networks by propagating error information backward through the network so that each w"
   },
   {
     "id": "q14",
@@ -137,7 +137,7 @@
     "rr": 1.0,
     "incorrectly_refused": false,
     "correctly_refused": null,
-    "answer_preview": "The vanishing\u2011gradient problem is the phenomenon where the partial derivative of a hidden state with respect to an input that occurred many time steps"
+    "answer_preview": "The vanishing gradient problem refers to the fact that, in a vanilla recurrent network, the derivative of a hidden state with respect to an input many"
   },
   {
     "id": "q15",
@@ -148,7 +148,7 @@
     "retrieved_top1": "attention_is_all_you_need.pdf",
     "incorrectly_refused": null,
     "correctly_refused": null,
-    "answer_preview": "I don't know based on the available documents."
+    "answer_preview": "The Transformer replaces the recurrent computation used in models such as GRUs with a self\u2011attention mechanism that relates different positions of a s"
   },
   {
     "id": "q16",
@@ -188,6 +188,87 @@
     "rr": 1.0,
     "incorrectly_refused": false,
     "correctly_refused": null,
-    "answer_preview": "The encoder is the first part of the Transformer\u2019s encoder\u2011decoder architecture.  \nIt takes an input sequence of symbol representations \\((x_1,\\dots ,"
+    "answer_preview": "The encoder is the component that transforms the raw input into a learned representation.  \n\n* In the Transformer model the encoder is a stack of\u202fN\u202f=\u202f"
+  },
+  {
+    "id": "q20",
+    "question": "What specific number of attention heads did the base Transformer model use?",
+    "difficulty": "hard",
+    "hit": true,
+    "rr": 1.0,
+    "incorrectly_refused": false,
+    "correctly_refused": null,
+    "answer_preview": "The base Transformer model uses eight parallel attention heads (\u202fh\u202f=\u202f8\u202f)\u202f[Source: attention_is_all_you_need.pdf, page\u202f4]."
+  },
+  {
+    "id": "q21",
+    "question": "Unlike LSTMs, what does the GRU NOT have?",
+    "difficulty": "hard",
+    "hit": true,
+    "rr": 1.0,
+    "incorrectly_refused": false,
+    "correctly_refused": null,
+    "answer_preview": "The GRU lacks the output gate that LSTMs use to control how much of the memory content is exposed to other units.\u202f[Source: gated_recurrent_neural_netw"
+  },
+  {
+    "id": "q22",
+    "question": "How does a model decide whether retrieved information is trustworthy enough to use directly?",
+    "difficulty": "hard",
+    "hit": true,
+    "rr": 1.0,
+    "incorrectly_refused": false,
+    "correctly_refused": null,
+    "answer_preview": "The system first runs a lightweight **retrieval evaluator** that scores the relevance of each retrieved document to the query. The score is compared a"
+  },
+  {
+    "id": "q23",
+    "question": "What happens after training completes, in terms of how a model's weights get updated?",
+    "difficulty": "hard",
+    "hit": true,
+    "rr": 1.0,
+    "incorrectly_refused": false,
+    "correctly_refused": null,
+    "answer_preview": "During training the back\u2011propagation routine computes the error derivative for each weight and then changes the weight by the summed gradient over all"
+  },
+  {
+    "id": "q24",
+    "question": "Between linear and polynomial regression, which one risks overfitting more, and why?",
+    "difficulty": "hard",
+    "hit": true,
+    "rr": 0.5,
+    "incorrectly_refused": false,
+    "correctly_refused": null,
+    "answer_preview": "Polynomial regression (especially with high\u2011degree terms) risks overfitting more than linear regression because the higher\u2011degree model has many more "
+  },
+  {
+    "id": "q25",
+    "question": "Why might a recurrent model struggle with long sequences, and how does attention avoid that problem?",
+    "difficulty": "hard",
+    "hit": null,
+    "rr": null,
+    "retrieved_top1": "attention_is_all_you_need.pdf",
+    "incorrectly_refused": null,
+    "correctly_refused": null,
+    "answer_preview": "Recurrent networks update each hidden state from the previous one, so a change at an early time step must travel through many sequential operations be"
+  },
+  {
+    "id": "q26",
+    "question": "What model won the WMT 2014 competition outright, according to this paper?",
+    "difficulty": "hard",
+    "hit": null,
+    "rr": null,
+    "correctly_refused": true,
+    "incorrectly_refused": null,
+    "answer_preview": "I don't know based on the available documents."
+  },
+  {
+    "id": "q27",
+    "question": "What is the exact GitHub repository URL for the CRAG implementation mentioned in the paper?",
+    "difficulty": "hard",
+    "hit": null,
+    "rr": null,
+    "correctly_refused": true,
+    "incorrectly_refused": null,
+    "answer_preview": "I don't know based on the available documents."
   }
 ]
