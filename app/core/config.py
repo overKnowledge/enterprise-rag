@@ -14,7 +14,7 @@ class Settings(BaseSettings):
     app_name: str = "Enterprise RAG Platform"
     environment: str = "development"
     log_level: str = "INFO"
-    groq_model: str = "openai/gpt-oss-20b"
+    groq_model: str = "openai/gpt-oss-120b"  # fallback default, override via .env
 
     openai_api_key: SecretStr | None = None
     mistral_api_key: SecretStr | None = None
