@@ -1,0 +1,154 @@
+[
+  {
+    "id": "q01",
+    "question": "What is multi-head attention?",
+    "expected_source": "attention_is_all_you_need.pdf",
+    "expected_page_range": [4, 5],
+    "difficulty": "easy",
+    "answerable": true
+  },
+  {
+    "id": "q02",
+    "question": "What is the formula for scaled dot-product attention?",
+    "expected_source": "attention_is_all_you_need.pdf",
+    "expected_page_range": [3, 4],
+    "difficulty": "easy",
+    "answerable": true
+  },
+  {
+    "id": "q03",
+    "question": "Why does the Transformer use positional encoding if it has no recurrence?",
+    "expected_source": "attention_is_all_you_need.pdf",
+    "expected_page_range": [5, 6],
+    "difficulty": "medium",
+    "answerable": true
+  },
+  {
+    "id": "q04",
+    "question": "What BLEU score did the Transformer achieve on the WMT 2014 English-to-German translation task?",
+    "expected_source": "attention_is_all_you_need.pdf",
+    "expected_page_range": [1, 1],
+    "difficulty": "easy",
+    "answerable": true
+  },
+  {
+    "id": "q05",
+    "question": "What are the three confidence levels CRAG's retrieval evaluator can assign to a retrieved document?",
+    "expected_source": "crag.pdf",
+    "expected_page_range": [4, 5],
+    "difficulty": "medium",
+    "answerable": true
+  },
+  {
+    "id": "q06",
+    "question": "What does CRAG do when a retrieval is classified as Incorrect?",
+    "expected_source": "crag.pdf",
+    "expected_page_range": [4, 5],
+    "difficulty": "medium",
+    "answerable": true
+  },
+  {
+    "id": "q07",
+    "question": "How did CRAG's accuracy compare to Self-RAG in the experiments?",
+    "expected_source": "crag.pdf",
+    "expected_page_range": [9, 10],
+    "difficulty": "hard",
+    "answerable": true
+  },
+  {
+    "id": "q08",
+    "question": "What is a key structural difference between GRU and LSTM gating mechanisms?",
+    "expected_source": "gated_recurrent_neural_networks.pdf",
+    "expected_page_range": [4, 5],
+    "difficulty": "medium",
+    "answerable": true
+  },
+  {
+    "id": "q09",
+    "question": "Does the GRU have a separate memory cell like the LSTM?",
+    "expected_source": "gated_recurrent_neural_networks.pdf",
+    "expected_page_range": [4, 5],
+    "difficulty": "medium",
+    "answerable": true
+  },
+  {
+    "id": "q10",
+    "question": "What datasets were used to compare tanh-RNN, LSTM, and GRU in terms of CPU time?",
+    "expected_source": "gated_recurrent_neural_networks.pdf",
+    "expected_page_range": [7, 8],
+    "difficulty": "hard",
+    "answerable": true
+  },
+  {
+    "id": "q11",
+    "question": "What is regression used for in machine learning?",
+    "expected_source": "https://www.geeksforgeeks.org/machine-learning/regression-in-machine-learning/",
+    "expected_page_range": [1, 1],
+    "difficulty": "easy",
+    "answerable": true
+  },
+  {
+    "id": "q12",
+    "question": "What is a disadvantage of using higher-degree polynomial regression?",
+    "expected_source": "https://www.geeksforgeeks.org/machine-learning/regression-in-machine-learning/",
+    "expected_page_range": [1, 1],
+    "difficulty": "medium",
+    "answerable": true
+  },
+  {
+    "id": "q13",
+    "question": "What is backpropagation in the context of training neural networks?",
+    "expected_source": "fundamentals_of_deep_learning.pdf",
+    "expected_page_range": null,
+    "difficulty": "easy",
+    "answerable": true
+  },
+  {
+    "id": "q14",
+    "question": "What is the vanishing gradient problem?",
+    "expected_source": "fundamentals_of_deep_learning.pdf",
+    "expected_page_range": null,
+    "difficulty": "medium",
+    "answerable": true
+  },
+  {
+    "id": "q15",
+    "question": "How does the attention mechanism in the Transformer relate to the gating mechanisms used in GRUs?",
+    "expected_source": "cross-document",
+    "expected_page_range": null,
+    "difficulty": "hard",
+    "answerable": true
+  },
+  {
+    "id": "q16",
+    "question": "What is the capital of France?",
+    "expected_source": null,
+    "expected_page_range": null,
+    "difficulty": "easy",
+    "answerable": false
+  },
+  {
+    "id": "q17",
+    "question": "What programming language was used to implement the Transformer in the original paper?",
+    "expected_source": null,
+    "expected_page_range": null,
+    "difficulty": "medium",
+    "answerable": false
+  },
+  {
+    "id": "q18",
+    "question": "What was Ashish Vaswani's favorite ice cream flavor?",
+    "expected_source": null,
+    "expected_page_range": null,
+    "difficulty": "easy",
+    "answerable": false
+  },
+  {
+  "id": "q19",
+  "question": "What is Encoder",
+  "expected_source": "attention_is_all_you_need.pdf",
+  "expected_page_range": [2, 3],
+  "difficulty": "easy",
+  "answerable": true
+  }
+]
