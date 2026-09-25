@@ -19,8 +19,8 @@ mistralai>=1.0
 groq>=0.11
 
 # ---- Phase 6: Retrieval upgrades ----
-# rank-bm25>=0.2.2
-# sentence-transformers>=3.0
+rank-bm25>=0.2.2
+sentence-transformers>=3.0
 
 # ---- Phase 5 & 8: Evaluation, agentic flows ----
 # ragas>=0.2
