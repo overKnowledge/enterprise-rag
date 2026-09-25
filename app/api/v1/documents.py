@@ -12,9 +12,12 @@ from app.ingestion.loaders.pdf import load_pdf
 from app.ingestion.loaders.web import load_web
 from app.ingestion.pipeline import ingest_document
 from app.schemas.documents import DocumentResponse, WebIngestRequest
+from fastapi import Depends
+from app.core.security import verify_api_key
+
 
 logger = logging.getLogger(__name__)
-router = APIRouter(prefix="/v1/documents", tags=["documents"])
+router = APIRouter(prefix="/v1/documents", tags=["documents"], dependencies=[Depends(verify_api_key)])
 
 SUPPORTED_EXTENSIONS = {".pdf": load_pdf, ".docx": load_docx}
 

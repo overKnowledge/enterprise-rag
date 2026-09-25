@@ -19,6 +19,7 @@ class Settings(BaseSettings):
     openai_api_key: SecretStr | None = None
     mistral_api_key: SecretStr | None = None
     groq_api_key: SecretStr | None = None
+    api_key: SecretStr | None = None
 
 
 @lru_cache
