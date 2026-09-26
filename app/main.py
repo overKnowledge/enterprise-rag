@@ -3,11 +3,11 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
-from app.api.v1 import health
 from app.core.config import get_settings
 from app.core.logging import setup_logging
 from app.db.session import init_db
 from app.api.v1 import chat, documents, health
+from app.core.exceptions import unhandled_exception_handler
 
 logger = logging.getLogger(__name__)
 
@@ -28,6 +28,7 @@ def create_app() -> FastAPI:
     app.include_router(health.router)
     app.include_router(documents.router)
     app.include_router(chat.router)
+    app.add_exception_handler(Exception, unhandled_exception_handler)
     return app
 
 
