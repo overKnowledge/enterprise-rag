@@ -9,11 +9,10 @@ from app.embeddings.huggingface import HuggingFaceEmbeddingProvider  # noqa: E40
 from app.generation.answerer import Answerer  # noqa: E402
 from app.generation.groq_provider import GroqLLMProvider  # noqa: E402
 from app.generation.prompts import NO_ANSWER_PHRASE  # noqa: E402
+from app.retrieval.reranker import CrossEncoderReranker
+from app.retrieval.retriever import RerankingRetriever
 from app.vectorstore.chroma import ChromaVectorStore  # noqa: E402
 from evaluation.metrics import hit_at_k, reciprocal_rank  # noqa: E402
-from app.retrieval.retriever import RerankingRetriever
-from app.retrieval.retriever import RerankingRetriever
-from app.retrieval.reranker import CrossEncoderReranker
 
 DATASET_PATH = Path("evaluation/datasets/golden_qa.json")
 RESULTS_PATH = Path("evaluation/last_run_results_reranked.json")

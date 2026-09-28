@@ -24,7 +24,11 @@ def ingest_document(doc: RawDocument, session: Session) -> IngestResult:
         session.query(Document).filter_by(content_hash=doc.content_hash).one_or_none()
     )
     if existing is not None:
-        logger.info("Skipping duplicate document: %s (hash=%s)", doc.source_name, doc.content_hash[:12])
+        logger.info(
+            "Skipping duplicate document: %s (hash=%s)",
+            doc.source_name,
+            doc.content_hash[:12],
+        )
         return IngestResult(document=existing, was_duplicate=True, chunk_count=existing.chunk_count)
 
     chunks = chunk_document(doc)

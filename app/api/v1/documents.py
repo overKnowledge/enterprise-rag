@@ -16,8 +16,11 @@ from app.ingestion.validation import content_matches_extension
 from app.schemas.documents import DocumentResponse, WebIngestRequest
 
 logger = logging.getLogger(__name__)
-router = APIRouter(prefix="/v1/documents", tags=["documents"], dependencies=[Depends(verify_api_key)])
-
+router = APIRouter(
+    prefix="/v1/documents",
+    tags=["documents"],
+    dependencies=[Depends(verify_api_key)],
+)
 SUPPORTED_EXTENSIONS = {".pdf": load_pdf, ".docx": load_docx}
 MAX_UPLOAD_SIZE_BYTES = 25 * 1024 * 1024  # 25 MB
 

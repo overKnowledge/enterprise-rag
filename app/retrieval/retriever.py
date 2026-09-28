@@ -19,4 +19,6 @@ class RerankingRetriever:
 
     def retrieve(self, query: str) -> list[dict]:
         hits = self._store.search(query, top_k=self._fetch_k)
-        return self._reranker.rerank(query, hits, top_n=self._top_n, min_top_score=self._min_top_score)
+        return self._reranker.rerank(
+            query, hits, top_n=self._top_n, min_top_score=self._min_top_score
+        )

@@ -29,6 +29,9 @@ class GroqLLMProvider:
             except RateLimitError as e:
                 last_error = e
                 wait_seconds = 5 * (attempt + 1)  # simple backoff: 5s, 10s, 15s
-                print(f"  Rate limited, waiting {wait_seconds}s (attempt {attempt + 1}/{max_retries})...")
+                print(
+                    f"  Rate limited, waiting {wait_seconds}s "
+                    f"(attempt {attempt + 1}/{max_retries})..."
+                )
                 time.sleep(wait_seconds)
         raise last_error    

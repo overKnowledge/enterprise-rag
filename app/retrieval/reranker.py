@@ -11,7 +11,7 @@ class CrossEncoderReranker:
         pairs = [(query, hit["text"]) for hit in hits]
         scores = self._model.predict(pairs)
 
-        for hit, score in zip(hits, scores):
+        for hit, score in zip(hits, scores, strict=True):
             hit["rerank_score"] = float(score)
 
         ranked = sorted(hits, key=lambda h: h["rerank_score"], reverse=True)
