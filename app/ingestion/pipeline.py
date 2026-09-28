@@ -5,6 +5,7 @@ from sqlalchemy.orm import Session
 from app.db.models import ChunkRecord, Document
 from app.ingestion.chunker import chunk_document
 from app.ingestion.loaders.base import RawDocument
+from app.vectorstore.chroma import ChromaVectorStore
 
 logger = logging.getLogger(__name__)
 
@@ -16,9 +17,13 @@ class IngestResult:
         self.chunk_count = chunk_count
 
 
-def ingest_document(doc: RawDocument, session: Session) -> IngestResult:
-    """Chunk a loaded document and persist its metadata. Idempotent: re-ingesting
-    a document with the same content_hash is a no-op that returns the existing record."""
+def ingest_document(
+    doc: RawDocument,
+    session: Session,
+    vector_store: ChromaVectorStore | None = None,
+) -> IngestResult:
+    """Chunk, index and record a document. Idempotent: re-ingesting the same
+    content_hash is a no-op that returns the existing record."""
 
     existing = (
         session.query(Document).filter_by(content_hash=doc.content_hash).one_or_none()
@@ -29,9 +34,29 @@ def ingest_document(doc: RawDocument, session: Session) -> IngestResult:
             doc.source_name,
             doc.content_hash[:12],
         )
-        return IngestResult(document=existing, was_duplicate=True, chunk_count=existing.chunk_count)
+        return IngestResult(
+            document=existing, was_duplicate=True, chunk_count=existing.chunk_count
+        )
 
     chunks = chunk_document(doc)
+
+    # Index BEFORE recording metadata: if embedding fails, nothing is marked as
+    # ingested, so a retry isn't wrongly skipped as a duplicate.
+    if vector_store is not None:
+        vector_store.add_chunks(
+            chunk_ids=[c.chunk_id for c in chunks],
+            texts=[c.text for c in chunks],
+            metadatas=[
+                {
+                    "source_name": doc.source_name,
+                    "source_type": doc.source_type,
+                    "page_start": c.page_start,
+                    "page_end": c.page_end,
+                    "chunk_index": c.chunk_index,
+                }
+                for c in chunks
+            ],
+        )
 
     document = Document(
         content_hash=doc.content_hash,
