@@ -16,8 +16,6 @@ class Settings(BaseSettings):
     log_level: str = "INFO"
     groq_model: str = "openai/gpt-oss-120b"  # fallback default, override via .env
 
-    openai_api_key: SecretStr | None = None
-    mistral_api_key: SecretStr | None = None
     groq_api_key: SecretStr | None = None
     api_key: SecretStr | None = None
 
