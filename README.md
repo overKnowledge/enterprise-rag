@@ -154,4 +154,4 @@ docs/             detailed evaluation write-up
 - Fixed-size chunking ignores document structure.
 - Single-turn Q&A: no conversation memory or query rewriting.
 - Free-tier Groq quotas (per-minute and per-day tokens) limit how often the full
-  evaluation can be run in one sitting.
+  evaluation can be run in one sitting. 
